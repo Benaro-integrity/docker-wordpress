@@ -1,0 +1,62 @@
+version: '3.8'
+
+services:
+  # Database Service
+  db:
+    image: mysql:8.0
+    container_name: cba_wp_mysql_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: cba_WP_adm1n_
+      MYSQL_DATABASE: cloudboosta_wp_db
+      MYSQL_USER: cba_wp_user
+      MYSQL_PASSWORD: CBA@wp!!_
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - wp_network
+
+  # WordPress Service
+  wordpress:
+    image: wordpress:latest
+    container_name: wp_apache_app
+    restart: always
+    depends_on:
+      - db
+    ports:
+      - "8080:80"
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: cba_wp_user
+      WORDPRESS_DB_PASSWORD: CBA@wp!!_
+      WORDPRESS_DB_NAME: cloudboosta_wp_db
+    volumes:
+      - wp_data:/var/www/html
+    networks:
+      - wp_network
+
+  # phpMyAdmin Service
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: wp_phpmyadmin
+    restart: always
+    depends_on:
+      - db
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      UPLOAD_LIMIT: 64M
+    networks:
+      - wp_network
+
+# Persistent Volumes
+volumes:
+  db_data:
+  wp_data:
+
+# Isolated Network
+networks:
+  wp_network:
+    driver: bridge
