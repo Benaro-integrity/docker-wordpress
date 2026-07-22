@@ -1,6 +1,4 @@
 # Dockerize A Wordpress Site
-How to dockerize a WordPress website using Docker Compose.
-
 To deploy a WordPress site in a container, you need a minimum of two core containers (the WordPress application and a database), but a production-ready stack typically requires four services to handle traffic and security safely.
 
 ## Core Services (Mandatory)
