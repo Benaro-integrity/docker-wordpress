@@ -39,5 +39,7 @@ To deploy WordPress, MySQL, and phpMyAdmin together with data persistence, you u
 
 # How to Run It
 1. Study  this [docker-compose file](https://github.com/Benaro-integrity/docker-wordpress/blob/main/cloudboosta-wp/docker-compose.yml), edit to suit your environment.
-2. Open your terminal in that directory and run: ```docker compose up -d```
-3. Stop containers by running ```docker compose down```
+2. Open your terminal in that directory and run:
+   ```docker compose up -d```
+3. Stop containers by running:
+   ```docker compose down```
