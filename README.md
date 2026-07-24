@@ -43,3 +43,6 @@ To deploy WordPress, MySQL, and phpMyAdmin together with data persistence, you u
    ```docker compose up -d```
 3. Stop containers by running:
    ```docker compose down```
+
+## Docker Secrets
+To improve this by introducing secrets follow [this repo] (https://github.com/Benaro-integrity/wordpress-docker-secrets).
