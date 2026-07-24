@@ -7,10 +7,10 @@ services:
     container_name: cba_wp_mysql_db
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: cba_WP_adm1n_
+      MYSQL_ROOT_PASSWORD: [Your_root_password!]
       MYSQL_DATABASE: cloudboosta_wp_db
       MYSQL_USER: cba_wp_user
-      MYSQL_PASSWORD: CBA@wp!!_
+      MYSQL_PASSWORD: [YourPassword!]
     volumes:
       - db_data:/var/lib/mysql
     networks:
@@ -28,7 +28,7 @@ services:
     environment:
       WORDPRESS_DB_HOST: db:3306
       WORDPRESS_DB_USER: cba_wp_user
-      WORDPRESS_DB_PASSWORD: CBA@wp!!_
+      WORDPRESS_DB_PASSWORD: [YourPassword!]
       WORDPRESS_DB_NAME: cloudboosta_wp_db
     volumes:
       - wp_data:/var/www/html
