@@ -45,4 +45,4 @@ To deploy WordPress, MySQL, and phpMyAdmin together with data persistence, you u
    ```docker compose down```
 
 ## Docker Secrets
-To improve this by introducing secrets and removing obsolute version attribute from the compose file, follow [this repo] (https://github.com/Benaro-integrity/wordpress-docker-secrets).
+To improve this by introducing secrets and removing obsolute version attribute from the compose file, follow [this repo](https://github.com/Benaro-integrity/wordpress-docker-secrets).
