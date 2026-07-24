@@ -31,13 +31,13 @@ Beyond the containers themselves, your container engine (like Docker Compose) mu
 ## To Run or Deploy Containers
 To deploy WordPress, MySQL, and phpMyAdmin together with data persistence, you use a Docker Compose file (**docker-compose.yml**) to orchestrate these three official images and link them together.
 
-# How This Setup Works
+## How This Setup Works
 * Data Persistence: The volumes section at the bottom creates two managed Docker volumes (db_data and wp_data). Even if you stop, delete, or update your containers, your database entries and uploaded media will remain safe.
   - Access Ports:Visit http://localhost:8080 to view your WordPress site.
   - Visit http://localhost:8081 to log into phpMyAdmin (use root and your root password to log in).
 * Security: The MySQL database does not expose any ports to your host machine. It can only be reached by WordPress and phpMyAdmin inside the secure wp_network.
 
-# How to Run It
+## How to Run It
 1. Study  this [docker-compose file](https://github.com/Benaro-integrity/docker-wordpress/blob/main/cloudboosta-wp/docker-compose.yml), edit to suit your environment.
 2. Open your terminal in that directory and run:
    ```docker compose up -d```
